@@ -1,9 +1,17 @@
 from fastapi import FastAPI, UploadFile, File
 from wordviz.loading import EmbeddingLoader
 from wordviz.dim_reduction import reduce_dim
-from pathlib import Path
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/')
 async def root():
@@ -24,10 +32,10 @@ async def root():
     }
 
 
-@app.post('/load')
+'''@app.post('/load')
 async def load_embeddings(file: UploadFile = File(...)):
     data = await file.read()
     loader = EmbeddingLoader()
     loader.load_from_file(data.decode(), "word2vec")
     app.state.loader = loader
-    return {"status": "loaded"}
+    return {"status": "loaded"}'''
