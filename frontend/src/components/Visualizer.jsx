@@ -47,12 +47,16 @@ export default function Visualizer(){
         ]}
         layout = {{
             autosize: true,
+            margin: { l: 0, r: 0, t: 20, b: 10 },
             scene: {
             xaxis: { showgrid: false, showticklabels: false, zeroline: true },
             yaxis: { showgrid: false, showticklabels: false, zeroline: true },
             zaxis: { showgrid: false, showticklabels: false, zeroline: true },
+            camera: { eye: { x: 0.8, y: 0.8, z: 0.6 }},
             }
         }}
+        style={{ width: "100%", height: "100%" }}
+        useResizeHandler={true}
       />
     )
 }

@@ -24,4 +24,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-backend/glove_w2v.txt
+*.txt
+*.ipynb

@@ -5,9 +5,11 @@ import Header from './components/Header'
 function App() {
 
   return (
-    <div className='w-full'>
+    <div className='w-full h-full'>
       <Header />
-      <Visualizer />
+      <div className='h-[80%] flex justify-center items-center'>
+        <Visualizer />
+      </div>
     </div>
   )
 }

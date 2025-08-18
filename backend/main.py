@@ -15,7 +15,7 @@ app.add_middleware(
 
 @app.get('/')
 async def root():
-    default_emb = 'glove.6B.100d.txt'
+    default_emb = 'glove_default_5000.txt'
     loader = EmbeddingLoader()
     loader.load_from_file(default_emb, "glove")
     reduced = reduce_dim(loader.embeddings, n_dimensions=3)
@@ -25,10 +25,10 @@ async def root():
     z = reduced[:, 2].tolist()
 
     return {
-        "words": loader.tokens[:500],
-        "x": x[:500],
-        "y": y[:500],
-        "z": z[:500]
+        "words": loader.tokens,
+        "x": x,
+        "y": y,
+        "z": z
     }
 
 
