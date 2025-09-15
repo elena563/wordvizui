@@ -10,7 +10,7 @@ function App() {
       <Header />
         <Sidebar />
         <div className='absolute w-[80%] left-[10%] top-[15%] h-[80%] flex justify-center items-center z-1'>
-          <Visualizer />
+          {/*<Visualizer />*/}
         </div>
     </div>
   )
